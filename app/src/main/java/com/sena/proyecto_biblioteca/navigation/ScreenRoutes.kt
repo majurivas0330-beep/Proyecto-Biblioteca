@@ -28,6 +28,52 @@ sealed class ScreenRoutes(val route: String) {
         }
     }
 
+    // --- Flujo de Mis Reservas ---
+    object MisReservas : ScreenRoutes("mis_reservas")
+
+    object DetalleReserva : ScreenRoutes("detalle_reserva/{nombreLibro}/{autor}/{fechaReserva}/{codigoReserva}/{estado}") {
+        fun createRoute(
+            nombreLibro: String,
+            autor: String,
+            fechaReserva: String,
+            codigoReserva: String,
+            estado: String
+        ): String {
+            val libroEnc = encodeParam(nombreLibro)
+            val autorEnc = encodeParam(autor)
+            val fechaEnc = encodeParam(fechaReserva)
+            val codigoEnc = encodeParam(codigoReserva)
+            val estadoEnc = encodeParam(estado)
+            return "detalle_reserva/$libroEnc/$autorEnc/$fechaEnc/$codigoEnc/$estadoEnc"
+        }
+    }
+
+    object RenovarReserva : ScreenRoutes("renovar_reserva/{nombreLibro}/{codigoReserva}/{fechaReserva}") {
+        fun createRoute(
+            nombreLibro: String,
+            codigoReserva: String,
+            fechaReserva: String
+        ): String {
+            val libroEnc = encodeParam(nombreLibro)
+            val codigoEnc = encodeParam(codigoReserva)
+            val fechaEnc = encodeParam(fechaReserva)
+            return "renovar_reserva/$libroEnc/$codigoEnc/$fechaEnc"
+        }
+    }
+
+    object RenovacionExitosa : ScreenRoutes("renovacion_exitosa/{nombreLibro}/{codigoReserva}/{fechaNueva}") {
+        fun createRoute(
+            nombreLibro: String,
+            codigoReserva: String,
+            fechaNueva: String
+        ): String {
+            val libroEnc = encodeParam(nombreLibro)
+            val codigoEnc = encodeParam(codigoReserva)
+            val fechaEnc = encodeParam(fechaNueva)
+            return "renovacion_exitosa/$libroEnc/$codigoEnc/$fechaEnc"
+        }
+    }
+
     companion object {
         fun encodeParam(param: String): String {
             return try {

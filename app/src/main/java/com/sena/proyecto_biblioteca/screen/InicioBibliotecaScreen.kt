@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.automirrored.filled.ListAlt
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Bookmark
@@ -40,7 +41,8 @@ import com.sena.proyecto_biblioteca.section.CabeceraSeccion
 
 @Composable
 fun InicioBibliotecaScreen(
-    onNavigateToListaLibros: () -> Unit
+    onNavigateToListaLibros: () -> Unit,
+    onNavigateToMisReservas: () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -127,13 +129,23 @@ fun InicioBibliotecaScreen(
                 descripcion = "Filtra por título, autor o categoría sin complicaciones."
             )
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(28.dp))
 
-            // Main Action Button
+            // Main Action Buttons
             BotonPersonalizado(
                 texto = "Explorar Catálogo de Libros",
                 onClick = onNavigateToListaLibros,
                 icono = Icons.AutoMirrored.Filled.ArrowForward
+            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            BotonPersonalizado(
+                texto = "Ver Mis Reservas",
+                onClick = onNavigateToMisReservas,
+                icono = Icons.AutoMirrored.Filled.ListAlt,
+                colorFondo = MaterialTheme.colorScheme.secondary,
+                colorTexto = MaterialTheme.colorScheme.onSecondary
             )
 
             Spacer(modifier = Modifier.height(16.dp))
