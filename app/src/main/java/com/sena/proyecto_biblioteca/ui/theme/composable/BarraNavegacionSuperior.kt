@@ -1,4 +1,4 @@
-package com.sena.proyecto_biblioteca.composable
+package com.sena.proyecto_biblioteca.ui.theme.composable
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack

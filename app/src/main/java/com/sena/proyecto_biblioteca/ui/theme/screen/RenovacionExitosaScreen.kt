@@ -1,4 +1,4 @@
-package com.sena.proyecto_biblioteca.screen
+package com.sena.proyecto_biblioteca.ui.theme.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -15,8 +15,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.FormatListBulleted
 import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.DividerDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -31,22 +31,23 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.sena.proyecto_biblioteca.composable.BarraNavegacionSuperior
-import com.sena.proyecto_biblioteca.composable.BotonPersonalizado
-import com.sena.proyecto_biblioteca.composable.ContenedorTarjeta
-import com.sena.proyecto_biblioteca.section.CabeceraSeccion
+import com.sena.proyecto_biblioteca.ui.theme.composable.BarraNavegacionSuperior
+import com.sena.proyecto_biblioteca.ui.theme.composable.BotonPersonalizado
+import com.sena.proyecto_biblioteca.ui.theme.composable.ContenedorTarjeta
+import com.sena.proyecto_biblioteca.ui.theme.section.CabeceraSeccion
 
 @Composable
-fun ConfirmacionScreen(
-    titulo: String,
-    onNavigateToInicio: () -> Unit
+fun RenovacionExitosaScreen(
+    nombreLibro: String,
+    codigoReserva: String,
+    fechaNueva: String,
+    onVolverAMisReservas: () -> Unit
 ) {
     Scaffold(
         topBar = {
             BarraNavegacionSuperior(
-                titulo = "Confirmación",
-                mostrarBotonAtras = true,
-                onBackClick = onNavigateToInicio
+                titulo = "Renovación Exitosa",
+                mostrarBotonAtras = false
             )
         }
     ) { innerPadding ->
@@ -60,7 +61,7 @@ fun ConfirmacionScreen(
         ) {
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Success Circle
+            // Green Success Icon Container
             Box(
                 modifier = Modifier
                     .size(100.dp)
@@ -81,7 +82,7 @@ fun ConfirmacionScreen(
             Spacer(modifier = Modifier.height(20.dp))
 
             Text(
-                text = "¡Reserva Confirmada!",
+                text = "Reserva Renovada",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface
@@ -90,7 +91,7 @@ fun ConfirmacionScreen(
             Spacer(modifier = Modifier.height(6.dp))
 
             Text(
-                text = "Tu solicitud ha sido procesada con éxito.",
+                text = "La fecha límite de devolución se ha actualizado correctamente.",
                 fontSize = 15.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center
@@ -99,32 +100,32 @@ fun ConfirmacionScreen(
             Spacer(modifier = Modifier.height(28.dp))
 
             CabeceraSeccion(
-                titulo = "Resumen de la Reserva",
-                subtitulo = "Presenta este comprobante en recepción"
+                titulo = "Resumen de Renovación",
+                subtitulo = "Comprobante de actualización"
             )
 
             Spacer(modifier = Modifier.height(8.dp))
 
             // Summary Card
             ContenedorTarjeta(elevation = 4.dp) {
-                ItemResumen(etiqueta = "Libro Reservado", valor = titulo, esDestacado = true)
+                FilaResumen(etiqueta = "Libro", valor = nombreLibro, esDestacado = true)
                 HorizontalDivider(modifier = Modifier.padding(vertical = 10.dp), color = DividerDefaults.color)
-                ItemResumen(etiqueta = "Código de Reserva", valor = "#RES-2026-8941")
+                FilaResumen(etiqueta = "Código", valor = codigoReserva)
                 HorizontalDivider(modifier = Modifier.padding(vertical = 10.dp), color = DividerDefaults.color)
-                ItemResumen(etiqueta = "Estado", valor = "Pendiente de retiro")
+                FilaResumen(etiqueta = "Nueva Fecha", valor = fechaNueva, esDestacado = true)
                 HorizontalDivider(modifier = Modifier.padding(vertical = 10.dp), color = DividerDefaults.color)
-                ItemResumen(etiqueta = "Plazo Máximo", valor = "48 horas hábiles")
-                HorizontalDivider(modifier = Modifier.padding(vertical = 10.dp), color = DividerDefaults.color)
-                ItemResumen(etiqueta = "Punto de Entrega", valor = "Biblioteca Principal SENA")
+                FilaResumen(etiqueta = "Estado", valor = "Renovada Exitosamente")
             }
 
             Spacer(modifier = Modifier.height(36.dp))
 
-            // Return to Home Button
+            // Green Return Button
             BotonPersonalizado(
-                texto = "Volver al Inicio",
-                onClick = onNavigateToInicio,
-                icono = Icons.Default.Home
+                texto = "Volver a Mis Reservas",
+                onClick = onVolverAMisReservas,
+                icono = Icons.AutoMirrored.Filled.FormatListBulleted,
+                colorFondo = Color(0xFF2E7D32), // Green Button
+                colorTexto = Color.White
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -133,7 +134,7 @@ fun ConfirmacionScreen(
 }
 
 @Composable
-private fun ItemResumen(
+private fun FilaResumen(
     etiqueta: String,
     valor: String,
     esDestacado: Boolean = false
@@ -146,7 +147,7 @@ private fun ItemResumen(
             text = etiqueta,
             fontSize = 14.sp,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.width(130.dp)
+            modifier = Modifier.width(110.dp)
         )
         Spacer(modifier = Modifier.width(8.dp))
         Text(

@@ -1,4 +1,4 @@
-package com.sena.proyecto_biblioteca.section
+package com.sena.proyecto_biblioteca.ui.theme.section
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -26,8 +26,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.sena.proyecto_biblioteca.composable.ContenedorTarjeta
-import com.sena.proyecto_biblioteca.data.Libro
+import com.sena.proyecto_biblioteca.ui.theme.composable.ContenedorTarjeta
+import com.sena.proyecto_biblioteca.ui.theme.data.Libro
 
 @Composable
 fun TarjetaLibroItem(

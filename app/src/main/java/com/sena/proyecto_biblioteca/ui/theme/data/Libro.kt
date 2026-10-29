@@ -1,4 +1,4 @@
-package com.sena.proyecto_biblioteca.data
+package com.sena.proyecto_biblioteca.ui.theme.data
 
 data class Libro(
     val id: String,
@@ -12,8 +12,8 @@ data class Libro(
 )
 
 object LibrosRepository {
-    fun obtenerLibros(): List<Libro> = listOf(
-        Libro(
+    fun obtenerLibros(): List<com.sena.proyecto_biblioteca.ui.theme.data.Libro> = listOf(
+        _root_ide_package_.com.sena.proyecto_biblioteca.ui.theme.data.Libro(
             id = "1",
             titulo = "Cien Años de Soledad",
             autor = "Gabriel García Márquez",
@@ -22,7 +22,7 @@ object LibrosRepository {
             paginas = 471,
             anio = 1967
         ),
-        Libro(
+        _root_ide_package_.com.sena.proyecto_biblioteca.ui.theme.data.Libro(
             id = "2",
             titulo = "Don Quijote de la Mancha",
             autor = "Miguel de Cervantes",
@@ -31,7 +31,7 @@ object LibrosRepository {
             paginas = 863,
             anio = 1605
         ),
-        Libro(
+        _root_ide_package_.com.sena.proyecto_biblioteca.ui.theme.data.Libro(
             id = "3",
             titulo = "El Principito",
             autor = "Antoine de Saint-Exupéry",
@@ -40,7 +40,7 @@ object LibrosRepository {
             paginas = 96,
             anio = 1943
         ),
-        Libro(
+        _root_ide_package_.com.sena.proyecto_biblioteca.ui.theme.data.Libro(
             id = "4",
             titulo = "1984",
             autor = "George Orwell",
@@ -49,7 +49,7 @@ object LibrosRepository {
             paginas = 328,
             anio = 1949
         ),
-        Libro(
+        _root_ide_package_.com.sena.proyecto_biblioteca.ui.theme.data.Libro(
             id = "5",
             titulo = "Rayuela",
             autor = "Julio Cortázar",
@@ -58,7 +58,7 @@ object LibrosRepository {
             paginas = 600,
             anio = 1963
         ),
-        Libro(
+        _root_ide_package_.com.sena.proyecto_biblioteca.ui.theme.data.Libro(
             id = "6",
             titulo = "La Sombra del Viento",
             autor = "Carlos Ruiz Zafón",

@@ -1,4 +1,4 @@
-package com.sena.proyecto_biblioteca.screen
+package com.sena.proyecto_biblioteca.ui.theme.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,7 +18,6 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -29,10 +28,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.sena.proyecto_biblioteca.composable.BarraNavegacionSuperior
-import com.sena.proyecto_biblioteca.data.LibrosRepository
-import com.sena.proyecto_biblioteca.section.CabeceraSeccion
-import com.sena.proyecto_biblioteca.section.TarjetaLibroItem
+import com.sena.proyecto_biblioteca.ui.theme.composable.BarraNavegacionSuperior
+import com.sena.proyecto_biblioteca.ui.theme.data.LibrosRepository
+import com.sena.proyecto_biblioteca.ui.theme.section.CabeceraSeccion
+import com.sena.proyecto_biblioteca.ui.theme.section.TarjetaLibroItem
 
 @Composable
 fun ListaLibrosScreen(

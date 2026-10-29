@@ -1,4 +1,4 @@
-package com.sena.proyecto_biblioteca.screen
+package com.sena.proyecto_biblioteca.ui.theme.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -32,10 +32,10 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.sena.proyecto_biblioteca.composable.BarraNavegacionSuperior
-import com.sena.proyecto_biblioteca.composable.BotonPersonalizado
-import com.sena.proyecto_biblioteca.composable.ContenedorTarjeta
-import com.sena.proyecto_biblioteca.section.CabeceraSeccion
+import com.sena.proyecto_biblioteca.ui.theme.composable.BarraNavegacionSuperior
+import com.sena.proyecto_biblioteca.ui.theme.composable.BotonPersonalizado
+import com.sena.proyecto_biblioteca.ui.theme.composable.ContenedorTarjeta
+import com.sena.proyecto_biblioteca.ui.theme.section.CabeceraSeccion
 
 @Composable
 fun DetalleLibroScreen(

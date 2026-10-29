@@ -1,4 +1,4 @@
-package com.sena.proyecto_biblioteca.section
+package com.sena.proyecto_biblioteca.ui.theme.section
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

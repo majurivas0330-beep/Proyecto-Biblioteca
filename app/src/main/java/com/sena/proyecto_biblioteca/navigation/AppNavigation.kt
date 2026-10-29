@@ -7,14 +7,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.sena.proyecto_biblioteca.screen.ConfirmacionScreen
-import com.sena.proyecto_biblioteca.screen.DetalleLibroScreen
-import com.sena.proyecto_biblioteca.screen.DetalleReservaScreen
-import com.sena.proyecto_biblioteca.screen.InicioBibliotecaScreen
-import com.sena.proyecto_biblioteca.screen.ListaLibrosScreen
-import com.sena.proyecto_biblioteca.screen.MisReservasScreen
-import com.sena.proyecto_biblioteca.screen.RenovacionExitosaScreen
-import com.sena.proyecto_biblioteca.screen.RenovarReservaScreen
+import com.sena.proyecto_biblioteca.ui.theme.screen.ConfirmacionScreen
+import com.sena.proyecto_biblioteca.ui.theme.screen.DetalleLibroScreen
+import com.sena.proyecto_biblioteca.ui.theme.screen.DetalleReservaScreen
+import com.sena.proyecto_biblioteca.ui.theme.screen.InicioBibliotecaScreen
+import com.sena.proyecto_biblioteca.ui.theme.screen.ListaLibrosScreen
+import com.sena.proyecto_biblioteca.ui.theme.screen.MisReservasScreen
+import com.sena.proyecto_biblioteca.ui.theme.screen.RenovacionExitosaScreen
+import com.sena.proyecto_biblioteca.ui.theme.screen.RenovarReservaScreen
 
 @Composable
 fun AppNavigation(
